@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Invoice</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          name="viewport">
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" type="text/css" href="custom.min.css">
+    <style>
+
+.img-valign {
+    vertical-align: middle;
+    margin-bottom: 0.75em;
+}
+.page-footer, .page-footer-space {
+  height: 50px;
+
+}
+.page {
+  page-break-after: never;
+}
+
+@page {
+  margin: 6mm
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+    </style>
+<body>
+
+
+<table>
+
+    <thead>
+    <tr>
+        <td>
+            <!--place holder for the fixed-position header-->
+            <div class="page-header-space"></div>
+        </td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>
+            <!--*** CONTENT GOES HERE ***-->
+            <div class="page" style="line-height: 3;">
+                <div class="wrapper">
+                    <!-- Main content -->
+                    <section class="invoice">
+                        <!-- title row -->
+                        <div class="row">
+                            <div id="header" class="col-xs-12 page-header">
+                                <h2 id="companyName" style="margin: 0px; font-size: 24px;">
+                                    <i class="fa fa-globe"></i> Sample Company pvt limited
+                                </h2>
+                            </div>
+
+                            <!-- /.col -->
+                        </div>
+
+                        <h2 class="page-header"
+                            style="margin-bottom:30px; font-size: 24px; padding-bottom: 30px; text-align: center; color: #">
+                            <b id="title">Tax Invoice & Receipt</b></h2>
+
+                        <div class="row invoice-info">
+                            <div class="col-sm-4 invoice-col">
+                                <strong>Invoice Date & Time</strong>
+                                <address id="invoiceDate">
+                                    24 May 2019 05:05 PM<br>
+                                </address>
+                            </div>
+                            <div class="col-sm-4 invoice-col">
+                                <strong>Invoice Number</strong>
+                                <address id="invoiceId">
+                                    IN001<br>
+                                </address>
+                            </div>
+                        </div>
+
+                        <!-- info row -->
+                        <div class="row invoice-info">
+                            <div class="col-sm-4 invoice-col">
+                                <strong>Dispatch Through</strong>
+                                <address id="dispatch">
+                                    Sample dispatch
+                                </address>
+                            </div>
+
+                            <div  class="col-sm-4 invoice-col">
+                                <strong>LR Number</strong>
+                                <address id="lrNumber">
+                                    sample LR
+                                </address>
+                            </div>
+
+                            <div  class="col-sm-4 invoice-col">
+                                <strong>Vehicle Number</strong>
+                                <address id="ShippingAddress">
+                                    Sample Vehicle No
+                                </address>
+                            </div>
+
+                            <div class="col-sm-4 invoice-col">
+                                <strong>Payment Mode</strong>
+                                <address id="delivery">
+                                    Cash
+                                </address>
+                            </div>
+
+                        </div>
+
+                        <!-- Table row -->
+                        <div class="row">
+                            <div class="col-xs-12 table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr id="productTableHead">
+                                        <th>SNo.</th>
+                                        <th>Product Description</th>
+                                        <th>HSN/SAC code</th>
+                                        <th>Unit Price</th>
+                                        <th>Qty</th>
+                                        <th id="productSub">Item Total</th>
+                                        <th id="charges">Charges</th>
+                                        <th id="productgst">GST</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                            </div>
+                            <div class="col-xs-6">
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                        <tr>
+                                            <th>Items Total</th>
+                                            <td id="itemTotalRow">Rs. 260</td>
+                                        </tr>
+
+                                        <tr >
+                                            <th id="cgstHead">GST</th>
+                                            <td id="gstRow">Rs. 260</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Additional Charges</th>
+                                            <td id="extraChargeRow">Rs. 400</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Grand Total</th>
+                                            <td  id="total">Rs. 1699</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row"
+                             style="border-top: 1px solid #e9e9e9; text-align: center; margin-top: 10px; padding-top: 20px;"
+                             ;>
+                            <div class="page-header" style="font-size:14px;">
+                                <address>
+                                    Thank You
+                                </address>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- /.content -->
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <td>
+            <!--place holder for the fixed-position footer-->
+            <div class="page-footer-space"></div>
+        </td>
+    </tr>
+    </tfoot>
+
+</table>
+<!-- ./wrapper -->
+
+</body>
+
+
+</html>
+<script type="text/javascript">
+
+                 function getDetails(invoiceNumber,dateTime,compName,dispatch,LrNo,vehicleNo,paymentMode)
+                {
+                    document.getElementById("invoiceId").innerHTML = invoiceNumber;
+                    document.getElementById("invoiceDate").innerHTML = dateTime;
+                    document.getElementById("companyName").innerHTML = compName;
+                    document.getElementById("dispatch").innerHTML = dispatch;
+                    document.getElementById("lrNumber").innerHTML = LrNo;
+                    document.getElementById("ShippingAddress").innerHTML = vehicleNo;
+                    document.getElementById("delivery").innerHTML = paymentMode;
+
+
+
+                }
+
+
+                 function loadProductTable(rowNo,sNo,productDes,hsnCode,unitPrice,qty,Subtotal,charges,gst,total)
+                {
+
+                    var table = document.getElementById("tableBody");
+                     var row = table.insertRow(rowNo);
+                        row.className='prod-data';
+
+                     var cell1 = row.insertCell(0);
+                     var cell2 = row.insertCell(1);
+                       var cell3 = row.insertCell(2);
+                          var cell4 = row.insertCell(3);
+                              var cell5 = row.insertCell(4);
+                                  var cell6 = row.insertCell(5);
+                                       var cell7 = row.insertCell(6)
+                                            var cell8 = row.insertCell(7);
+                                            var cell9 = row.insertCell(8);
+
+
+                         cell1.innerHTML =sNo;
+                            cell2.innerHTML = productDes;
+                                 cell3.innerHTML = hsnCode;
+                                      cell4.innerHTML = unitPrice;
+                                            cell5.innerHTML = qty;
+                                                cell6.innerHTML = Subtotal;
+                                                     cell7.innerHTML = charges;
+                                                          cell8.innerHTML = gst;
+                                                          cell9.innerHTML = total;
+
+
+
+
+                document.getElementById("itemTotalRow").innerHTML = Subtotal;
+                document.getElementById("gstRow").innerHTML = gst;
+                document.getElementById("extraChargeRow").innerHTML = charges;
+                document.getElementById("total").innerHTML = total;
+
+
+
+
+
+
+
+                }
+
+
+</script>
